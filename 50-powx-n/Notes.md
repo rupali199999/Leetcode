@@ -1,1 +1,1 @@
-<h2>powx-n Notes</h2><hr>Using simple maths, by reducing power and increasing base value,
+<h2>powx-n Notes</h2><hr>Using simple maths, by reducing power and increasing base value
