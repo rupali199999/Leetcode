@@ -1,1 +1,1 @@
-<h2>4sum Notes</h2><hr>instead of a
+<h2>4sum Notes</h2><hr>instead of adding all elem
