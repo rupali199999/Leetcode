@@ -9,21 +9,21 @@
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-       if (headA == nullptr || headB == nullptr) {
+        if (headA == nullptr || headB == nullptr) {
             return nullptr; // If any list is empty, there can't be an intersection
         }
-        
-        ListNode* pA = headA;
-        ListNode* pB = headB;
-
-        // Iterate until pA and pB intersect or reach the end of their lists
-        while (pA != pB) {
-            // Move pA forward, if it reaches the end of list A, move it to the beginning of list B
-            pA = (pA == nullptr) ? headB : pA->next;
-            // Move pB forward, if it reaches the end of list B, move it to the beginning of list A
-            pB = (pB == nullptr) ? headA : pB->next;
+        ListNode* p2=headB;
+        while(p2!=nullptr)
+        {
+            ListNode* p1=headA;
+            while(p1!=nullptr)
+            {
+                if(p1==p2)
+                    return p2;
+                p1=p1->next;
+            }
+            p2=p2->next;
         }
-
-        return pA; // Return either intersection point or nullptr if no intersection
+        return nullptr;
     }
 };
