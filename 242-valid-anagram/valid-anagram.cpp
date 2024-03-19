@@ -4,15 +4,18 @@ public:
         if(s.size()!=t.size())
             return false;
         vector<int> v1(26,0);
-        vector<int> v2(26,0);
-        for(int i=0;i<s.size();i++)
+        for(char i:s)
         {
-            v1[s[i]-'a']++;
+            v1[i-'a']++;
         }
-        for(int i=0;i<t.size();i++)
+        for(char i:t)
         {
-            v2[t[i]-'a']++;
+            v1[i-'a']--;
         }
-        return v1==v2;
+        for(int count : v1) {
+            if(count != 0)
+                return false;
+        }
+        return true;
     }
 };
