@@ -10,12 +10,11 @@ public:
         }
         for(char i:t)
         {
+            if(v1[i-'a']==0)
+                return false;
             v1[i-'a']--;
         }
-        for(int count : v1) {
-            if(count != 0)
-                return false;
-        }
+        
         return true;
     }
 };
