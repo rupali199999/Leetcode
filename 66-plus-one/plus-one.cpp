@@ -1,29 +1,25 @@
 class Solution {
 public:
     vector<int> plusOne(vector<int>& digits) {
-        int n=digits.size();
-        reverse(digits.begin(),digits.end());
-        int carry=1,i=0;
-        while(carry==1)
+        int carry=1;
+        int i=digits.size()-1;
+        while(carry)
         {
-            if(i<n)
+            if(i>=0)
             {
                 if(digits[i]==9)
                     digits[i]=0;
-                else
-                {
+                else{
                     digits[i]+=1;
                     carry=0;
                 }
             }
-            else
-            {
-                digits.push_back(1);
+            else{
+                digits.insert(digits.begin(),1);
                 carry=0;
             }
-            i++;
+            i--;
         }
-        reverse(digits.begin(),digits.end());
         return digits;
     }
 };
