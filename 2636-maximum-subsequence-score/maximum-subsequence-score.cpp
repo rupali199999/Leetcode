@@ -12,17 +12,15 @@ public:
         {
             sum+=v[i].second;
             pq.push(v[i].second);
-            if(pq.size()>k)
+            if(pq.size()<k)
             {
-                while(pq.size()>k)
-                {
-                    sum-=pq.top();
-                    pq.pop();
-                }
+                continue;
             }
             if(pq.size()==k)
             {
                 ans=max(ans,sum*v[i].first);
+                sum-=pq.top();
+                pq.pop();
             }
         }
         return ans;
