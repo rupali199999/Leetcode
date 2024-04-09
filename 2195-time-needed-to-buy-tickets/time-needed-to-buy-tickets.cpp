@@ -3,19 +3,17 @@ public:
     int timeRequiredToBuy(vector<int>& tickets, int k) {
         int time=0;
         int n=tickets.size();
-        while(tickets[k]!=0)
-        {
-           for(int i=0;i<n;i++)
+        for(int i=0;i<n;i++)
             {
-                if(tickets[i]>0)
+                if(tickets[i]<tickets[k])
                 {
-                    tickets[i]--;
-                    time++;
+                    time+=tickets[i];
                 }
-                if(i==k && tickets[k]==0)
-                    break;
+                else
+                    time+=tickets[k];
+                if(i>k && tickets[i]>=tickets[k])
+                    time--;
             }
-        }
         return time;
     }
 };
