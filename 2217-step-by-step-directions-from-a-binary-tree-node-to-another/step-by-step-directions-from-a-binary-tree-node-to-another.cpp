@@ -35,7 +35,7 @@ public:
         findPath(root,sd,destValue,'S');
         int i=0,j=0;
         while(i<ss.size() && j<sd.size() && ss[i]==sd[j])   i++,j++;
-
+        //thanks for helping kishu
         string res="";
         while(i<ss.size())  res.push_back('U'), i++;
         while(j<sd.size())  res.push_back(sd[j]),  j++;
