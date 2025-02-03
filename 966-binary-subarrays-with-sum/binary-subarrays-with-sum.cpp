@@ -1,23 +1,21 @@
 class Solution {
 public:
     int numSubarraysWithSum(vector<int>& nums, int goal) {
+        int currSum=0;
         int count=0;
-        int n=nums.size();
-        for(int i=0;i<n-1;i++){
-            int sum=0;
-            sum+=nums[i];
-            if(sum==goal)
+        unordered_map<int,int> freq;
+
+        for(int num:nums){
+            currSum+=num;
+            if(currSum==goal)
                 count++;
-            for(int j=i+1;j<n;j++){
-                sum+=nums[j];
-                if(sum==goal)
-                    count++;
-                else if(sum>goal)
-                    break;
+            
+            if(freq.find(currSum-goal)!=freq.end())
+            {
+                count+=freq[currSum-goal];
             }
+            freq[currSum]++;
         }
-        if(nums[n-1]==goal)
-            count++;
         return count;
     }
 };
