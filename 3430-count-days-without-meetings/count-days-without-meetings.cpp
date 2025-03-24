@@ -18,7 +18,6 @@ public:
         }
         newMeetings.push_back({start,end});
         int count=0;
-        unordered_map<int,int> mp;
         for(int i=0;i<newMeetings.size();i++){
             count += (newMeetings[i][1]-newMeetings[i][0])+1;
         }
